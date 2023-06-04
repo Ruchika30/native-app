@@ -1,0 +1,63 @@
+.mb-4 {
+  margin-bottom: 1rem
+}
+
+.mt-2 {
+  margin-top: 0.5rem
+}
+
+.flex {
+  display: flex
+}
+
+.h-64 {
+  height: 16rem
+}
+
+.w-64 {
+  width: 16rem
+}
+
+.w-full {
+  width: 100%
+}
+
+.flex-1 {
+  flex: 1 1 0%
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.pb-8 {
+  padding-bottom: 2rem
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity))
+}
