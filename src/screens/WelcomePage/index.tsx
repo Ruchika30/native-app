@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react';
-import {View, Text, PanResponder, Image, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Text, Image} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
-
 import ButtonComponent from '../../components/Button';
+import {styles} from './styles';
 
 function LandingPage({navigation}) {
   const config = {
@@ -11,19 +11,19 @@ function LandingPage({navigation}) {
   };
 
   const handleGetStarted = () => {
-    navigation.navigate('LandingPage');
+    navigation.navigate('landingPage');
   };
 
   const handleRegister = () => {
-    navigation.navigate('Register');
+    navigation.navigate('register');
   };
 
   const handleLogin = () => {
-    navigation.navigate('Login');
+    navigation.navigate('login');
   };
 
   const onSwipeRight = () => {
-    navigation.navigate('LandingPage');
+    navigation.navigate('landingPage');
   };
 
   React.useLayoutEffect(() => {
@@ -31,26 +31,16 @@ function LandingPage({navigation}) {
   }, [navigation]);
 
   return (
-    <View style={{height: '100%', padding: 30, backgroundColor: 'black'}}>
+    <View style={styles.wrapper}>
       <View>
         <View style={styles.container}>
           <Image
-            style={{
-              width: 'auto',
-              height: 300,
-              marginBottom: 15,
-              alignItems: 'center',
-            }}
+            style={styles.imageStyle}
             source={require('../../assets/logo.png')}
           />
         </View>
 
-        <View
-          style={{
-            height: '60%',
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}>
+        <View style={styles.buttonWrapper}>
           <View style={styles.marginB}>
             <ButtonComponent title="Welcome" onClick={handleGetStarted} />
             <ButtonComponent
@@ -79,44 +69,4 @@ function LandingPage({navigation}) {
   );
 }
 
-const styles = StyleSheet.create({
-  button: {
-    borderRadius: 5,
-    paddingVertical: 6,
-    paddingHorizontal: 20,
-    minWidth: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'red',
-  },
-
-  buttonOutlined: {
-    borderWidth: 1,
-    borderColor: 'red',
-  },
-
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-  text: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  textOutlined: {
-    color: 'red',
-  },
-  container: {
-    height: '40%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    marginBottom: 0,
-  },
-  marginB: {
-    marginBottom: 10,
-  },
-});
 export default LandingPage;

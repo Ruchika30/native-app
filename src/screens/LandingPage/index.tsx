@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import DeviceInfo, {getDeviceId} from 'react-native-device-info';
+import DeviceInfo from 'react-native-device-info';
+import {styles} from './styles';
+import ButtonComponent from '../../components/Button';
 
 function Landingpage({navigation}) {
   const [user, setUser] = useState('Guest');
@@ -18,10 +20,12 @@ function Landingpage({navigation}) {
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
+      goBack: false,
       headerStyle: {
         backgroundColor: 'red',
         color: 'white',
       },
+      headerBackVisible: false,
       headerRight: () => (
         <TouchableOpacity onPress={handleLogout}>
           <Text style={styles.subHeading}>Logout</Text>
@@ -53,41 +57,33 @@ function Landingpage({navigation}) {
     loadNameFromStorage();
   }, []);
 
+  const handleExplore = () => {
+    navigation.navigate('explore', {user});
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Hi {user}</Text>
       <Text style={styles.subHeading}>Welcome to Royals by ZNMD</Text>
 
-      <View style={{display: 'flex'}}>
+      <View style={styles.device}>
         <Text style={styles.info}>
           {`You are logged in on:   ${
             isEmulator ? 'Emulator' : 'Mobile'
           }, ${getDeviceId()}`}
         </Text>
       </View>
+
+      <View style={{marginTop: 10}}>
+        <ButtonComponent
+          fullWidth={false}
+          title="Explore"
+          onClick={handleExplore}
+          variant="contained"
+        />
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'black',
-    color: 'white',
-    height: '100%',
-    padding: 30,
-  },
-  heading: {
-    fontSize: 34,
-    marginBottom: 7,
-    color: 'white',
-  },
-  subHeading: {
-    fontSize: 14,
-    color: 'white',
-  },
-  info: {
-    marginVertical: 8,
-    color: 'white',
-  },
-});
 export default Landingpage;

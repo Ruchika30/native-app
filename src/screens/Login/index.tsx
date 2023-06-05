@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonComponent from '../../components/Button';
 import InputComponent from '../../components/InputField';
+import {styles} from './styles';
 
 const LoginPage = ({navigation}) => {
   const [name, setName] = useState('');
@@ -19,7 +20,7 @@ const LoginPage = ({navigation}) => {
     }
 
     alert(`Congrats! You are logged in successfully with Name: ${name}`);
-    navigation.navigate('LandingPage');
+    navigation.navigate('landingPage');
 
     try {
       await AsyncStorage.setItem('name', name);
@@ -71,39 +72,5 @@ const LoginPage = ({navigation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  form: {
-    marginVertical: 30,
-  },
-  heading: {
-    fontSize: 34,
-    marginBottom: 7,
-    color: 'white',
-  },
-  subHeading: {
-    fontSize: 14,
-    color: 'white',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: 'black',
-  },
-  titleContainer: {
-    marginBottom: 10,
-  },
-  input: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    color: 'white',
-  },
-  submit: {
-    marginTop: 30,
-  },
-});
 
 export default LoginPage;
