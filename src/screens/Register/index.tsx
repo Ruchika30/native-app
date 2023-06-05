@@ -1,11 +1,6 @@
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  AsyncStorage,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonComponent from '../../components/Button';
 import InputComponent from '../../components/InputField';
 import {styles} from './styles';

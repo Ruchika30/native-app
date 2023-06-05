@@ -1,12 +1,9 @@
-import {View, Text, TouchableOpacity} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import {View, Text} from 'react-native';
+import React from 'react';
 import {styles} from './styles';
-import DeviceInfo from 'react-native-device-info';
 
 function ExplorePage({route, navigation}) {
   const {user} = route.params;
-  console.log('userhh--', user);
-  const [isEmulator, setIsEmulator] = useState(false);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -16,11 +13,7 @@ function ExplorePage({route, navigation}) {
         color: 'white',
       },
     });
-
-    DeviceInfo.isEmulator().then(device => {
-      setIsEmulator(device);
-    });
-  }, []);
+  }, [navigation]);
 
   return (
     <View style={[styles.container]}>

@@ -2,9 +2,19 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import ButtonComponent from '../../components/Button';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
 import {styles} from './styles';
 
-function LandingPage({navigation}) {
+type RootStackParamList = {
+  landingPage: undefined;
+  register: undefined;
+  login: undefined;
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'landingPage'>;
+
+function LandingPage({navigation}: Props) {
   const config = {
     velocityThreshold: 0.3,
     directionalOffsetThreshold: 80,

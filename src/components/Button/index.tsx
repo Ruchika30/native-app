@@ -1,6 +1,17 @@
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+interface IButtonProps {
+  onClick: () => void;
+  title: string;
+  variant: string;
+  fullWidth: boolean;
+}
 
-function ButtonComponent({onClick, title, variant, fullWidth = true}) {
+function ButtonComponent({
+  onClick,
+  title,
+  variant,
+  fullWidth = true,
+}: IButtonProps) {
   const styles = StyleSheet.create({
     button: {
       borderRadius: 5,

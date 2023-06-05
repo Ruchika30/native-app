@@ -1,7 +1,21 @@
 import React from 'react';
-import {TextInput} from 'react-native';
+import {TextInput, KeyboardTypeOptions} from 'react-native';
 
-function InputField({styles, placeholder, value, onChange, keyboardType}) {
+interface InputFieldProps {
+  styles: {};
+  placeholder: string;
+  value: string;
+  onChange: () => void;
+  keyboardType: KeyboardTypeOptions;
+}
+
+function InputField({
+  styles,
+  placeholder,
+  value,
+  onChange,
+  keyboardType,
+}: InputFieldProps) {
   return (
     <TextInput
       style={styles}
