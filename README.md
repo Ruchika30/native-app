@@ -1,6 +1,6 @@
 # Native-app
 
-This is a React Native application that has 4-5 screens which has been created as part of the assignment
+This is a React Native application that has the below screens which has been created as part of the assignment
 
 1. Welcome page
 2. Login page
