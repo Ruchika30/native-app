@@ -1,40 +1,14 @@
 import React, {useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  PanResponder,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {View, Text, PanResponder, Image, StyleSheet} from 'react-native';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 import ButtonComponent from '../../components/Button';
 
 function LandingPage({navigation}) {
-  const slideRef = useRef(null);
-  const [slideValue, setSlideValue] = useState(0);
-
-  const panResponder = useRef(
-    PanResponder.create({
-      onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderMove: (evt, gestureState) => {
-        if (
-          gestureState.dx > 0 &&
-          gestureState.dx <= slideRef.current.offsetWidth
-        ) {
-          setSlideValue(gestureState.dx);
-        }
-      },
-      onPanResponderRelease: (evt, gestureState) => {
-        if (gestureState.dx >= slideRef.current.offsetWidth / 2) {
-          setSlideValue(slideRef.current.offsetWidth);
-          navigation.navigate('LandingPage');
-        } else {
-          setSlideValue(0);
-        }
-      },
-    }),
-  ).current;
+  const config = {
+    velocityThreshold: 0.3,
+    directionalOffsetThreshold: 80,
+  };
 
   const handleGetStarted = () => {
     navigation.navigate('LandingPage');
@@ -46,6 +20,10 @@ function LandingPage({navigation}) {
 
   const handleLogin = () => {
     navigation.navigate('Login');
+  };
+
+  const onSwipeRight = () => {
+    navigation.navigate('LandingPage');
   };
 
   React.useLayoutEffect(() => {
@@ -88,42 +66,47 @@ function LandingPage({navigation}) {
               variant="outlined"
             />
           </View>
-          <View style={styles.marginB}>
-            <ButtonComponent
-              title="Guest Login"
-              onClick={handleGetStarted}
-              variant="outlined"
-            />
-          </View>
-          <TouchableOpacity
-            style={[
-              styles.sliderBtn,
-              {backgroundColor: slideValue > 0 ? '#4CAF50' : '#ccc'},
-            ]}
-            ref={slideRef}
-            {...panResponder.panHandlers}>
-            <Text style={styles.buttonText}>Slide to activate</Text>
-          </TouchableOpacity>
-        </View>
 
-        {/* <Button title="Get Started" onPress={getStarted} /> */}
+          <GestureRecognizer
+            onSwipeRight={onSwipeRight}
+            config={config}
+            style={[styles.button, styles.buttonOutlined]}>
+            <Text style={[styles.text, styles.textOutlined]}>Guest Login</Text>
+          </GestureRecognizer>
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  sliderBtn: {
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+  button: {
     borderRadius: 5,
-    width: '80%',
-    alignItems: 'center',
+    paddingVertical: 6,
+    paddingHorizontal: 20,
+    minWidth: 100,
     justifyContent: 'center',
+    alignItems: 'center',
+    color: 'red',
   },
+
+  buttonOutlined: {
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+
   buttonText: {
     color: '#fff',
     fontSize: 16,
+  },
+  text: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  textOutlined: {
+    color: 'red',
   },
   container: {
     height: '40%',
