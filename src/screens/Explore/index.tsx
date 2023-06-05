@@ -1,9 +1,10 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
-function ExplorePage({route}: {route?: {params: {user: string}}}) {
+function ExplorePage() {
+  const route = useRoute();
   const navigation = useNavigation();
 
   const {user} = route && route.params;

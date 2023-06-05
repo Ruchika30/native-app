@@ -62,6 +62,7 @@ const LoginPage = () => {
           placeholder="Password"
           value={password}
           onChange={setPassword}
+          isSecureText={true}
         />
       </View>
 

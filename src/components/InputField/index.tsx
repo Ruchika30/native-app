@@ -7,6 +7,7 @@ interface InputFieldProps {
   value: string;
   onChange: (value: any) => void;
   keyboardType?: KeyboardTypeOptions;
+  isSecureText?: boolean;
 }
 
 function InputField({
@@ -15,6 +16,7 @@ function InputField({
   value,
   onChange,
   keyboardType,
+  isSecureText,
 }: InputFieldProps) {
   return (
     <TextInput
@@ -24,6 +26,7 @@ function InputField({
       value={value}
       onChangeText={onChange}
       keyboardType={keyboardType}
+      secureTextEntry={isSecureText}
     />
   );
 }
