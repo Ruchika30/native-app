@@ -6,7 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 function ExplorePage({route}: {route?: {params: {user: string}}}) {
   const navigation = useNavigation();
 
-  const {user} = route.params;
+  const {user} = route && route.params;
 
   React.useLayoutEffect(() => {
     navigation.setOptions({

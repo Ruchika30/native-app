@@ -1,9 +1,9 @@
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import ButtonComponent from '../../components/Button';
-import {useNavigation, NavigationProp} from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 
 type RootStackParamList = {
@@ -15,7 +15,7 @@ type RootStackParamList = {
 };
 
 export type INavigation = {
-  navigation: NavigationProp<RootStackParamList, 'welcome'>;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'welcome'>;
 };
 
 function LandingPage() {
