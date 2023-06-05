@@ -34,7 +34,8 @@ message text and styling should be configurable through JS.
 <img width="338" alt="Screenshot 2023-06-05 at 12 58 07 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/d966ee07-bbe0-4677-9fd5-ced9f4db8841">
 
 4. Landing page
-<img width="339" alt="Screenshot 2023-06-05 at 12 58 29 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/27556842-5c7e-49e7-8ba6-60dddcc99c8e">
+<img width="331" alt="Screenshot 2023-06-05 at 6 50 27 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/a4450f5e-185f-441f-9bf8-6c870768ab15">
+
 
 5. Explore page
 <img width="338" alt="Screenshot 2023-06-05 at 2 13 08 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/baa87ab2-c261-4e15-b204-477e4864c9a8">
