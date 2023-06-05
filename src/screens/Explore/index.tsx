@@ -1,8 +1,11 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
+import {useNavigation} from '@react-navigation/native';
 
-function ExplorePage({route, navigation}) {
+function ExplorePage({route}: {route?: {params: {user: string}}}) {
+  const navigation = useNavigation();
+
   const {user} = route.params;
 
   React.useLayoutEffect(() => {
@@ -18,9 +21,11 @@ function ExplorePage({route, navigation}) {
   return (
     <View style={[styles.container]}>
       <Text style={styles.heading}>Hi {user}</Text>
-      <Text style={styles.heading}>
-        Welcome to the explore section of the app
-      </Text>
+      <View style={styles.wrapper}>
+        <Text style={styles.subHeading}>
+          Welcome to the explore section of the app
+        </Text>
+      </View>
     </View>
   );
 }

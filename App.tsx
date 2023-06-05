@@ -7,7 +7,7 @@ import LandingPage from './src/screens/LandingPage';
 import RegisterPage from './src/screens/Register';
 import ExplorePage from './src/screens/Explore';
 
-const MyComponent = () => {
+const MainComponent = () => {
   const Stack = createNativeStackNavigator();
 
   return (
@@ -36,6 +36,7 @@ const MyComponent = () => {
           component={LandingPage}
           options={{title: ''}}
         />
+
         <Stack.Screen
           name="explore"
           component={ExplorePage}
@@ -46,4 +47,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default MainComponent;

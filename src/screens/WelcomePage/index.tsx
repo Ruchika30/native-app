@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import ButtonComponent from '../../components/Button';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 
 import {styles} from './styles';
 
@@ -10,11 +10,21 @@ type RootStackParamList = {
   landingPage: undefined;
   register: undefined;
   login: undefined;
+  welcome: undefined;
+  explore: undefined;
 };
 
-type Props = NativeStackScreenProps<RootStackParamList, 'landingPage'>;
+export type INavigation = {
+  navigation: NavigationProp<RootStackParamList, 'welcome'>;
+};
 
-function LandingPage({navigation}: Props) {
+function LandingPage() {
+  const navigation = useNavigation();
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({headerShown: false});
+  }, [navigation]);
+
   const config = {
     velocityThreshold: 0.3,
     directionalOffsetThreshold: 80,
@@ -35,10 +45,6 @@ function LandingPage({navigation}: Props) {
   const onSwipeRight = () => {
     navigation.navigate('landingPage');
   };
-
-  React.useLayoutEffect(() => {
-    navigation.setOptions({headerShown: false});
-  }, [navigation]);
 
   return (
     <View style={styles.wrapper}>
@@ -71,7 +77,9 @@ function LandingPage({navigation}: Props) {
             onSwipeRight={onSwipeRight}
             config={config}
             style={[styles.button, styles.buttonOutlined]}>
-            <Text style={[styles.text, styles.textOutlined]}>Guest Login</Text>
+            <Text style={[styles.text, styles.textOutlined]}>
+              Swipe right for Guest Login
+            </Text>
           </GestureRecognizer>
         </View>
       </View>

@@ -3,9 +3,11 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonComponent from '../../components/Button';
 import InputComponent from '../../components/InputField';
+import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 
-const RegisterPage = ({navigation}) => {
+const RegisterPage = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -23,4 +23,7 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
     color: 'white',
   },
+  btnnWarpper: {
+    marginTop: 10,
+  },
 });

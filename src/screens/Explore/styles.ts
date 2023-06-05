@@ -8,7 +8,14 @@ export const styles = StyleSheet.create({
     padding: 30,
   },
   heading: {
-    fontSize: 20,
+    fontSize: 34,
     color: 'white',
+  },
+  subHeading: {
+    fontSize: 14,
+    color: 'white',
+  },
+  wrapper: {
+    marginTop: 20,
   },
 });

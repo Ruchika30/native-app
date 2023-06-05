@@ -2,8 +2,8 @@ import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 interface IButtonProps {
   onClick: () => void;
   title: string;
-  variant: string;
-  fullWidth: boolean;
+  variant?: string;
+  fullWidth?: boolean;
 }
 
 function ButtonComponent({

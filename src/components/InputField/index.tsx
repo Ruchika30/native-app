@@ -5,8 +5,8 @@ interface InputFieldProps {
   styles: {};
   placeholder: string;
   value: string;
-  onChange: () => void;
-  keyboardType: KeyboardTypeOptions;
+  onChange: (value: any) => void;
+  keyboardType?: KeyboardTypeOptions;
 }
 
 function InputField({

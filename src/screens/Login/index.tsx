@@ -3,9 +3,12 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonComponent from '../../components/Button';
 import InputComponent from '../../components/InputField';
+import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 
-const LoginPage = ({navigation}) => {
+const LoginPage = () => {
+  const navigation = useNavigation();
+
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
