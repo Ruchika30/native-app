@@ -36,4 +36,5 @@ message text and styling should be configurable through JS.
 <img width="339" alt="Screenshot 2023-06-05 at 12 58 29 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/27556842-5c7e-49e7-8ba6-60dddcc99c8e">
 
 5. Explore page
-<img width="336" alt="Screenshot 2023-06-05 at 12 58 42 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/d0671084-9472-4307-9039-0dce3cee80b5">
+<img width="338" alt="Screenshot 2023-06-05 at 2 13 08 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/baa87ab2-c261-4e15-b204-477e4864c9a8">
+
