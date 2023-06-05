@@ -24,7 +24,8 @@ message text and styling should be configurable through JS.
 
 
 1. Welcome page
-<img width="333" alt="Screenshot 2023-06-05 at 12 57 24 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/615202d6-f849-4d60-a4c0-063783a1cbef">
+<img width="338" alt="Screenshot 2023-06-05 at 6 39 35 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/916e2e09-de46-4841-aed6-74a1d6876ef7">
+
 
 2. Login page
 <img width="335" alt="Screenshot 2023-06-05 at 12 57 45 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/a839a428-e06f-41e7-9102-013d9a51dc62">
