@@ -1,4 +1,4 @@
-# native-app
+# Native-app
 
 This is a React Native application that has 4-5 screens which has been created as part of the assignment
 
