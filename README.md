@@ -21,6 +21,8 @@ variation of a button should provide slide event to perform action.
 is running on an emulator/simulator. If so, display a notice to the user. The notice
 message text and styling should be configurable through JS.
 
+
+
 1. Welcome page
 <img width="333" alt="Screenshot 2023-06-05 at 12 57 24 PM" src="https://github.com/Ruchika30/native-app/assets/16018506/615202d6-f849-4d60-a4c0-063783a1cbef">
 
